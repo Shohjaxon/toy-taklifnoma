@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Nikoh to'yiga taklifnoma</title>
+  <meta name="description" content="Sizni nikoh to'yimizga taklif qilamiz. Sana, vaqt, manzil va xarita.">
+  <meta property="og:title" content="Nikoh to'yiga taklifnoma 💍">
+  <meta property="og:description" content="Hurmatli mehmon! Sizni hayotimizdagi eng baxtli kunga — nikoh to'yimizga taklif qilamiz.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="uz_UZ">
+  <meta name="theme-color" content="#fbf6ee">
+  <link rel="alternate" hreflang="ru" href="../ru/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Konvert -->
+  <div class="intro" id="intro" role="button" tabindex="0" aria-label="Taklifnomani ochish">
+    <div class="envelope">
+      <div class="envelope__back"></div>
+      <div class="envelope__letter"><span><span data-w="groom"></span> & <span data-w="bride"></span></span></div>
+      <div class="envelope__front"></div>
+      <div class="envelope__flap"></div>
+      <div class="envelope__seal" data-w="initials"></div>
+    </div>
+    <p class="intro__hint">Ochish uchun bosing</p>
+  </div>
+
+  <canvas id="petals" aria-hidden="true"></canvas>
+  <nav class="lang-switch" aria-label="Til">
+    <a href="../uz/" class="active" lang="uz">O'zb</a>
+    <a href="../ru/" lang="ru">Рус</a>
+  </nav>
+  <button class="music-btn" id="music" hidden aria-label="Musiqa">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+  </button>
+
+  <!-- Bosh ekran -->
+  <header class="hero">
+    <div class="hero__frame"></div>
+    <svg class="hero__corner hero__corner--tl" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M10 110V40Q10 10 40 10h70"/><path d="M22 110V48q0-26 26-26h62"/><path d="M40 10c0 18-12 30-30 30M48 22c-2 14-12 24-26 26"/><circle cx="34" cy="34" r="4"/><path d="M60 22c6-8 16-8 22 0M22 60c-8 6-8 16 0 22"/></svg>
+    <svg class="hero__corner hero__corner--tr" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M10 110V40Q10 10 40 10h70"/><path d="M22 110V48q0-26 26-26h62"/><path d="M40 10c0 18-12 30-30 30M48 22c-2 14-12 24-26 26"/><circle cx="34" cy="34" r="4"/><path d="M60 22c6-8 16-8 22 0M22 60c-8 6-8 16 0 22"/></svg>
+    <svg class="hero__corner hero__corner--bl" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M10 110V40Q10 10 40 10h70"/><path d="M22 110V48q0-26 26-26h62"/><path d="M40 10c0 18-12 30-30 30M48 22c-2 14-12 24-26 26"/><circle cx="34" cy="34" r="4"/><path d="M60 22c6-8 16-8 22 0M22 60c-8 6-8 16 0 22"/></svg>
+    <svg class="hero__corner hero__corner--br" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M10 110V40Q10 10 40 10h70"/><path d="M22 110V48q0-26 26-26h62"/><path d="M40 10c0 18-12 30-30 30M48 22c-2 14-12 24-26 26"/><circle cx="34" cy="34" r="4"/><path d="M60 22c6-8 16-8 22 0M22 60c-8 6-8 16 0 22"/></svg>
+
+    <p class="eyebrow reveal">Nikoh to'yi</p>
+    <h1 class="hero__names">
+      <span class="reveal reveal-d1" data-w="groom"></span>
+      <span class="hero__amp reveal reveal-d2">&</span>
+      <span class="reveal reveal-d3" data-w="bride"></span>
+    </h1>
+    <div class="hero__date reveal reveal-d3">
+      <small data-w="weekday"></small>
+      <b data-w="day"></b>
+      <small><span data-w="month"></span> <span data-w="year"></span></small>
+    </div>
+    <a href="#invite" class="scroll-down" aria-label="Pastga">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+  </header>
+
+  <main>
+    <!-- Taklif matni -->
+    <section class="section invite-text" id="invite">
+      <p class="eyebrow reveal">Assalomu alaykum</p>
+      <h2 class="title reveal">Aziz mehmonlarimiz!</h2>
+      <p class="reveal">Sizni hayotimizdagi eng baxtli va unutilmas kun — farzandlarimiz <b data-w="groom"></b> va <b data-w="bride"></b>ning nikoh to'yiga lutfan taklif etamiz.</p>
+      <p class="reveal">Ushbu quvonchli kunni siz bilan birga nishonlash biz uchun katta sharafdir.</p>
+      <svg class="ornament reveal" viewBox="0 0 220 30" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 15h80M140 15h80"/><path d="M110 4c-8 0-14 5-14 11s6 11 14 11 14-5 14-11-6-11-14-11z"/><path d="M80 15c6-8 12-8 16 0M124 15c4-8 10-8 16 0M80 15c6 8 12 8 16 0M124 15c4 8 10 8 16 0"/><circle cx="110" cy="15" r="3" fill="currentColor"/></svg>
+      <p class="verse reveal">«Uning alomatlaridan biri — o'zingizdan sizlar uchun juftlar yaratgani, ularga taskin topishingiz uchun, va o'rtangizda muhabbat va mehr paydo qilganidir.»<br><small>Rum surasi, 21-oyat</small></p>
+    </section>
+
+    <!-- Sana va teskari sanoq -->
+    <section class="section" id="date">
+      <p class="eyebrow reveal">To'y sanasi</p>
+      <h2 class="title reveal"><span data-w="fulldate"></span></h2>
+      <p class="lead reveal"><span data-w="weekday"></span>, soat <b data-w="time"></b> da</p>
+      <div class="card calendar reveal">
+        <div class="calendar__month" id="calendar-month"></div>
+        <div class="calendar__grid" id="calendar-grid"></div>
+      </div>
+      <p class="eyebrow reveal" style="margin-top:50px">To'yga qadar qoldi</p>
+      <div class="countdown reveal" id="countdown">
+        <div><b id="cd-d">0</b><span>kun</span></div>
+        <div><b id="cd-h">00</b><span>soat</span></div>
+        <div><b id="cd-m">00</b><span>daqiqa</span></div>
+        <div><b id="cd-s">00</b><span>soniya</span></div>
+      </div>
+      <p class="countdown-done" id="countdown-done" hidden>Bugun bizning kunimiz!</p>
+      <div class="btns reveal">
+        <a class="btn btn--ghost" id="gcal" target="_blank" rel="noopener">Google Kalendar</a>
+        <button class="btn btn--ghost" id="ics" type="button">Kalendarga qo'shish (.ics)</button>
+      </div>
+    </section>
+
+    <!-- To'y dasturi -->
+    <section class="section" id="program">
+      <div class="card start-time reveal">
+        <p class="eyebrow">To'y boshlanishi</p>
+        <div class="start-time__clock" data-w="time"></div>
+      </div>
+    </section>
+
+    <!-- Manzil -->
+    <section class="section" id="location">
+      <p class="eyebrow reveal">Manzil</p>
+      <h2 class="title reveal">To'y qayerda bo'ladi</h2>
+      <div class="card reveal">
+        <div class="venue__name" data-w="venue"></div>
+        <div class="venue__address" data-w="address"></div>
+        <div class="btns">
+          <a class="btn" data-map="google" target="_blank" rel="noopener">Google Maps</a>
+          <button class="btn btn--ghost" id="copy-address" type="button">Manzilni nusxalash</button>
+        </div>
+        <iframe class="map" id="map" title="To'yxona xaritada" loading="lazy" allowfullscreen></iframe>
+        <div class="qr-wrap">
+          <div class="qr" id="qr" aria-label="Manzil QR kodi"></div>
+          <div class="qr-text"><b>Skanerlang</b>Telefon kamerasini QR kodga tuting — manzil xaritada ochiladi va yo'l ko'rsatiladi.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <svg class="ornament reveal" viewBox="0 0 220 30" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 15h80M140 15h80"/><path d="M110 4c-8 0-14 5-14 11s6 11 14 11 14-5 14-11-6-11-14-11z"/><path d="M80 15c6-8 12-8 16 0M124 15c4-8 10-8 16 0M80 15c6 8 12 8 16 0M124 15c4 8 10 8 16 0"/><circle cx="110" cy="15" r="3" fill="currentColor"/></svg>
+    <p class="reveal">Sizni intizorlik bilan kutamiz!</p>
+    <div class="footer__names shimmer reveal"><span data-w="groom"></span> & <span data-w="bride"></span></div>
+    <p class="footer__hosts reveal">Hurmat bilan, <span data-w="hosts"></span></p>
+    <div class="btns reveal">
+      <button class="btn btn--ghost" id="share" type="button">Taklifnomani ulashish</button>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

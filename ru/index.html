@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Приглашение на свадьбу</title>
+  <meta name="description" content="Приглашаем вас на нашу свадьбу. Дата, время, адрес и карта.">
+  <meta property="og:title" content="Приглашение на свадьбу 💍">
+  <meta property="og:description" content="Дорогой гость! Приглашаем вас разделить с нами самый счастливый день — день нашей свадьбы.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#fbf6ee">
+  <link rel="alternate" hreflang="uz" href="../uz/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Marck+Script&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Конверт -->
+  <div class="intro" id="intro" role="button" tabindex="0" aria-label="Открыть приглашение">
+    <div class="envelope">
+      <div class="envelope__back"></div>
+      <div class="envelope__letter"><span><span data-w="groom"></span> & <span data-w="bride"></span></span></div>
+      <div class="envelope__front"></div>
+      <div class="envelope__flap"></div>
+      <div class="envelope__seal" data-w="initials"></div>
+    </div>
+    <p class="intro__hint">Нажмите, чтобы открыть</p>
+  </div>
+
+  <canvas id="petals" aria-hidden="true"></canvas>
+  <nav class="lang-switch" aria-label="Язык">
+    <a href="../uz/" lang="uz">O'zb</a>
+    <a href="../ru/" class="active" lang="ru">Рус</a>
+  </nav>
+  <button class="music-btn" id="music" hidden aria-label="Музыка">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+  </button>
+
+  <!-- Главный экран -->
+  <header class="hero">
+    <div class="hero__frame"></div>
+    <svg class="hero__corner hero__corner--tl" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M10 110V40Q10 10 40 10h70"/><path d="M22 110V48q0-26 26-26h62"/><path d="M40 10c0 18-12 30-30 30M48 22c-2 14-12 24-26 26"/><circle cx="34" cy="34" r="4"/><path d="M60 22c6-8 16-8 22 0M22 60c-8 6-8 16 0 22"/></svg>
+    <svg class="hero__corner hero__corner--tr" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M10 110V40Q10 10 40 10h70"/><path d="M22 110V48q0-26 26-26h62"/><path d="M40 10c0 18-12 30-30 30M48 22c-2 14-12 24-26 26"/><circle cx="34" cy="34" r="4"/><path d="M60 22c6-8 16-8 22 0M22 60c-8 6-8 16 0 22"/></svg>
+    <svg class="hero__corner hero__corner--bl" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M10 110V40Q10 10 40 10h70"/><path d="M22 110V48q0-26 26-26h62"/><path d="M40 10c0 18-12 30-30 30M48 22c-2 14-12 24-26 26"/><circle cx="34" cy="34" r="4"/><path d="M60 22c6-8 16-8 22 0M22 60c-8 6-8 16 0 22"/></svg>
+    <svg class="hero__corner hero__corner--br" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M10 110V40Q10 10 40 10h70"/><path d="M22 110V48q0-26 26-26h62"/><path d="M40 10c0 18-12 30-30 30M48 22c-2 14-12 24-26 26"/><circle cx="34" cy="34" r="4"/><path d="M60 22c6-8 16-8 22 0M22 60c-8 6-8 16 0 22"/></svg>
+
+    <p class="eyebrow reveal">Свадьба</p>
+    <h1 class="hero__names">
+      <span class="reveal reveal-d1" data-w="groom"></span>
+      <span class="hero__amp reveal reveal-d2">&</span>
+      <span class="reveal reveal-d3" data-w="bride"></span>
+    </h1>
+    <div class="hero__date reveal reveal-d3">
+      <small data-w="weekday"></small>
+      <b data-w="day"></b>
+      <small><span data-w="month"></span> <span data-w="year"></span></small>
+    </div>
+    <a href="#invite" class="scroll-down" aria-label="Вниз">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+  </header>
+
+  <main>
+    <!-- Текст приглашения -->
+    <section class="section invite-text" id="invite">
+      <p class="eyebrow reveal">Приглашение</p>
+      <h2 class="title reveal">Дорогие гости!</h2>
+      <p class="reveal">С радостью приглашаем вас разделить с нами самый счастливый и незабываемый день — свадьбу наших детей <b data-w="groom"></b> и <b data-w="bride"></b>.</p>
+      <p class="reveal">Для нас будет большой честью отметить этот радостный день вместе с вами.</p>
+      <svg class="ornament reveal" viewBox="0 0 220 30" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 15h80M140 15h80"/><path d="M110 4c-8 0-14 5-14 11s6 11 14 11 14-5 14-11-6-11-14-11z"/><path d="M80 15c6-8 12-8 16 0M124 15c4-8 10-8 16 0M80 15c6 8 12 8 16 0M124 15c4 8 10 8 16 0"/><circle cx="110" cy="15" r="3" fill="currentColor"/></svg>
+      <p class="verse reveal">«Среди Его знамений — то, что Он сотворил из вас самих жён для вас, чтобы вы находили в них успокоение, и установил между вами любовь и милосердие.»<br><small>Сура «Ар-Рум», аят 21</small></p>
+    </section>
+
+    <!-- Дата и обратный отсчёт -->
+    <section class="section" id="date">
+      <p class="eyebrow reveal">Дата свадьбы</p>
+      <h2 class="title reveal"><span data-w="fulldate"></span></h2>
+      <p class="lead reveal"><span data-w="weekday"></span>, в <b data-w="time"></b></p>
+      <div class="card calendar reveal">
+        <div class="calendar__month" id="calendar-month"></div>
+        <div class="calendar__grid" id="calendar-grid"></div>
+      </div>
+      <p class="eyebrow reveal" style="margin-top:50px">До свадьбы осталось</p>
+      <div class="countdown reveal" id="countdown">
+        <div><b id="cd-d">0</b><span>дней</span></div>
+        <div><b id="cd-h">00</b><span>часов</span></div>
+        <div><b id="cd-m">00</b><span>минут</span></div>
+        <div><b id="cd-s">00</b><span>секунд</span></div>
+      </div>
+      <p class="countdown-done" id="countdown-done" hidden>Сегодня наш день!</p>
+      <div class="btns reveal">
+        <a class="btn btn--ghost" id="gcal" target="_blank" rel="noopener">Google Календарь</a>
+        <button class="btn btn--ghost" id="ics" type="button">Добавить в календарь (.ics)</button>
+      </div>
+    </section>
+
+    <!-- Программа -->
+    <section class="section" id="program">
+      <div class="card start-time reveal">
+        <p class="eyebrow">Начало торжества</p>
+        <div class="start-time__clock" data-w="time"></div>
+      </div>
+    </section>
+
+    <!-- Адрес -->
+    <section class="section" id="location">
+      <p class="eyebrow reveal">Адрес</p>
+      <h2 class="title reveal">Место проведения</h2>
+      <div class="card reveal">
+        <div class="venue__name" data-w="venue"></div>
+        <div class="venue__address" data-w="address"></div>
+        <div class="btns">
+          <a class="btn" data-map="google" target="_blank" rel="noopener">Google Maps</a>
+          <button class="btn btn--ghost" id="copy-address" type="button">Скопировать адрес</button>
+        </div>
+        <iframe class="map" id="map" title="Место проведения на карте" loading="lazy" allowfullscreen></iframe>
+        <div class="qr-wrap">
+          <div class="qr" id="qr" aria-label="QR-код адреса"></div>
+          <div class="qr-text"><b>Отсканируйте</b>Наведите камеру телефона на QR-код — место откроется на карте и построится маршрут.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <svg class="ornament reveal" viewBox="0 0 220 30" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 15h80M140 15h80"/><path d="M110 4c-8 0-14 5-14 11s6 11 14 11 14-5 14-11-6-11-14-11z"/><path d="M80 15c6-8 12-8 16 0M124 15c4-8 10-8 16 0M80 15c6 8 12 8 16 0M124 15c4 8 10 8 16 0"/><circle cx="110" cy="15" r="3" fill="currentColor"/></svg>
+    <p class="reveal">С нетерпением ждём вас!</p>
+    <div class="footer__names shimmer reveal"><span data-w="groom"></span> & <span data-w="bride"></span></div>
+    <p class="footer__hosts reveal">С уважением, <span data-w="hosts"></span></p>
+    <div class="btns reveal">
+      <button class="btn btn--ghost" id="share" type="button">Поделиться приглашением</button>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

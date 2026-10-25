@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taklifnoma / Приглашение</title>
+  <script>
+    // Brauzer tili bo'yicha avtomatik yo'naltirish / Автоперенаправление по языку браузера
+    (function () {
+      var langs = (navigator.languages || [navigator.language || ""]).join(",").toLowerCase();
+      var target = /(^|,)uz/.test(langs) || !/(^|,)ru/.test(langs) ? "uz/" : "ru/";
+      location.replace(target + location.search);
+    })();
+  </script>
+</head>
+<body style="font-family:serif;text-align:center;padding:40px;background:#fbf6ee">
+  <p><a href="uz/">O'zbekcha</a> · <a href="ru/">Русский</a></p>
+</body>
+</html>
